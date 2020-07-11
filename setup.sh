@@ -1,6 +1,4 @@
 #!/bin/bash -
-set -u
-set -e
 
 MODEL_NAME=ssd_mobilenet_v1_coco_2018_01_28
 TEST_DATA_DIR=test0001
@@ -16,10 +14,11 @@ git clone --depth 1 https://github.com/tensorflow/models.git
 
 ### set model data
 mv ${MODEL_NAME} models/research/object_detection/
-mv ${TEST_DATA_DIR} models/research/object_detection/
+cp -r ${TEST_DATA_DIR} models/research/object_detection/
 
 ### set scripts
-cp train.py models/research/
+cp train.sh models/research/
+cp export.sh models/research/
 
 ### build docker
 cd models
