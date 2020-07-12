@@ -18,7 +18,6 @@ cp -r ${TEST_DATA_DIR} models/research/object_detection/
 
 ### set scripts
 cp train.sh models/research/
-cp export.sh models/research/
 
 ### build docker
 cd models
